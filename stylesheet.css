@@ -1,0 +1,823 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+body {
+    background-color: #F9FBFE;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    color: green;
+}
+
+/* ------------------------------------
+header.php 
+-------------------------------------*/
+
+header {
+    width: 100%;
+    height: 150px;
+    background-color: #fff;
+    font-size: 1.25rem;
+}
+header #brand {
+    height: 100px;
+    /* background-color: rgb(28 219 53 / 75%); */
+}
+header h1 {
+    padding-top: 15px;
+    height: 75px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+header p {
+    height: 25px;
+}
+header a {
+    color: rgb(50 192 4);
+}
+nav {
+    border-bottom: 3px solid #0a55be;
+    width: 100%;
+}
+nav a{
+    color: #000;
+}
+#global-nav.m_fixed {
+	left: 0;
+	position: fixed;
+	top: 0;
+    background-color: white;
+    z-index: 1001;
+}
+/*------------------------------------- 
+フォントオーサム
+--------------------------------------*/
+.fa-book-open {
+    color: #0a55be;
+    padding-right: 10px;
+}
+.fa-landmark {
+    color: #9c5304;
+    padding-right: 10px;
+}
+.fa-earth-americas {
+    color: #289c04;
+    padding-right: 10px;
+}
+.fa-flask {
+    color: #9c9704;
+    padding-right: 10px;
+}
+.fa-font {
+    color: #9c0404;
+    padding-right: 10px;
+}
+/*------------------------------------------ 
+ここまでフォントオーサム
+-------------------------------------------*/
+    /*
+    グローバルナビゲーション
+    「position: relative;」で、サブメニュー（Wide）の基準位置として設定
+    */
+.menu {
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+}
+.menu > li {
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+    /*
+    「display: block;」でリンク範囲を親要素と同じ範囲まで広げる
+    */
+.menu > li a {
+    display: block;
+    word-break: break-all;
+}
+    /*
+    ドロップダウン用のメニュー
+    初期状態は表示しないため、「visibility: hidden;」で非表示にしておく
+    */
+.menu-second {
+    visibility: hidden;
+}
+
+    /*
+    Menu Single
+    「position: relative;」で、サブメニュー（Single）の基準位置として設定
+    */
+.menu > .single {
+    position: relative;
+    margin-bottom: -3px;
+}
+    /*
+    「position: absolute;」で、singleクラスを基準に所定の位置に配置する
+    */
+.single .menu-second {
+    width: 100%;
+    background-color: #3c3636;
+    top: 50px;
+    left: 0;
+    border-right: 1px solid #0a55bea7;
+    border-bottom: 1px solid #0a55bea7;
+    border-left: 1px solid #0a55bea7;
+}
+.single .menu-second li a:hover {
+    opacity: 0.7;
+    color: green;
+}
+.single .menu-second li {
+    border-bottom: 1px solid #0a55bea7;
+}
+    /*
+    ホバー時にサブメニュー（Single）を表示する
+    */
+.single:hover .menu-second {
+    visibility: visible;
+}
+
+#national {
+    background-color: #92b5e7
+}
+#citizen {
+    background-color: #ac9175;
+}
+#geography {
+    background-color: #b7d89d;
+}
+#science {
+    background-color: #d8d69d;
+}
+#english {
+    background-color: #d89d9d;
+}
+/*-----------------------------------------------
+ここまでheader
+-----------------------------------------------*/
+/*-----------------------------------------------
+検索
+-----------------------------------------------*/
+#search{
+    height: 125px;
+    display: flex;
+    align-items: center;
+}
+.search_container{
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #999;
+    display: block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    height: 2.3em;
+    width: 260px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.search_container input[type="text"]{
+    border: none;
+    height: 2.0em;
+}
+.search_container input[type="text"]:focus {
+    outline: 0;
+}
+.search_container input[type="submit"]{
+    cursor: pointer;
+    font-family: FontAwesome;
+    font-size: 1.3em;
+    border: none;
+    background: none;
+    color: #079c04;
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    right: 0;
+    top: -10px;
+    outline : none;
+}
+/* -----------------------------------------
+ここまで～検索～
+------------------------------------------*/
+main {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 4% 4% 4%;
+}
+/* -----------------------------------------
+教科リスト 
+------------------------------------------*/
+#menu .title {
+    height: 20px;
+    position: relative;
+}
+#menu .title h2 {
+    position: absolute;
+    top: 25%;
+    left: 6%;
+    border-radius: 5px;
+}
+#menu .title a {
+    border-radius: 5px;
+    background-color: rgb(183 231 200);
+    color: #000;
+    padding: 15px 30px 15px 30px;
+}
+#menu .title span {
+    border-radius: 5px;
+    background-color: rgb(183 231 200);
+    color: #000;
+    padding: 15px 30px 15px 30px;
+}
+#menu .title a:hover {
+    color: green;
+}
+#menu .small-fleam {
+    border: 2px solid #000;
+    margin-bottom: 50px;
+    max-width: 750px;
+    background-color: #fff;
+    box-shadow: 8px 9px 9px #ccc ;
+}
+#menu .list-fleam {
+    border: 2px solid #000;
+    margin-bottom: 50px;
+    background-color: #fff;
+    box-shadow: 8px 9px 9px #ccc ;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 50px;
+    grid-auto-rows: 50px;
+    text-align: left;
+    margin: 75px 50px 50px 75px;
+}
+#menu .count {
+    width: 3%;
+}
+#menu .link {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+#menu p {
+    width: 150px;
+}
+#menu .link a {
+    display: block;
+    width: 100px;
+    height: 25px;
+}
+
+
+/* -----------------------------------------
+ここまで～教科リスト ～
+------------------------------------------*/
+/* -----------------------------------------
+ニュース
+------------------------------------------*/
+#news {
+    height: 300px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+#news .heading {
+    height: 25px;
+}
+#news .ingredient-list {
+    height: 260px;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+    line-height: 50px;
+}
+#news .ingredient-list dt {
+    width: 15%;
+    border-bottom: dotted 1px #000;
+}
+#news .ingredient-list dd {
+    width: 85%;
+    border-bottom: dotted 1px #000;
+}
+#news .ingredient-list dt:last-child {
+    border-bottom: hidden;
+}
+#news .ingredient-list dd:last-child {
+    border-bottom: hidden;
+}
+/* -----------------------------------------
+ここまで～ニュース～
+------------------------------------------*/
+/* -----------------------------------------
+footerとcopy
+------------------------------------------*/
+footer {
+    height: 300px;
+    text-align: left;
+    background-color: #5d5e60;
+}
+footer .concept-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #fff;
+}
+footer .concept {
+    height: 180px;
+}
+footer .concept h3 {
+    font-size: 1.5rem;
+    padding: 15px 0;
+}
+footer .concept p {
+    line-height: 25px;
+}
+footer .sns {
+    height: 50px;
+    margin-bottom: 1rem;
+}
+.fa-twitter {
+    color: #fff;
+}
+.fa-twitter:hover {
+    color: #079c04;
+}
+.contact a {
+    color: #fff;
+    text-decoration: underline;
+}
+.contact a:hover {
+    color: #079c04;
+}
+.copy {
+    height: 60px;
+    background-color: #fff;
+}
+.copy-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 60px;
+}
+/* -----------------------------------------
+ここまで～footerとcopy～
+------------------------------------------*/
+/*-----------------------------------------
+playページ
+-----------------------------------------*/
+.play-article {
+    /* border: solid 2px #000; */
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 2%;
+}
+.play-article a {
+    text-decoration: underline;
+}
+.article-area {
+    font-size: 1.25rem;
+    line-height: 50px;
+}
+.quotation {
+    margin-top: 75px;
+    text-align: right;
+}
+/* audio-controls */
+.audio-controls{
+    width: 100%;
+    height: 90px;
+    padding: 0 1%;
+    color: #fff;
+    position: fixed;/*コンテンツが下に潜り込まないようにHTMLに右記を直接入力。padding-bottom: 90px;box-sizing: border-box;*/
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    /* background-color: #8eeb71; */
+    background-color: #484a47;
+    display: flex;
+}
+#control {
+    height: 60%;
+}
+#control-wrapper {
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 1%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 50px;
+    grid-auto-rows: 50px;
+}
+#time {
+    height: 40%;
+}
+#forward {
+    margin-right: 0 30px;
+}
+/* ツールチップ付きのフォントオーサム */
+.balloon {
+    position   : absolute;                /* 親要素を基準 */
+    display: none;                        /* 要素を非表示 */
+    padding: 2px;                         /* テキストの前後の余白 */
+    background-color: #484A47;         /* 背景色（透明度） */
+    width: 75px;                          /* 吹き出し全体の幅 */
+    left : 8%;                           /* 表示位置 */
+    bottom : 100%;                        /* 表示位置 */
+    margin-bottom : 5px;                 /* 表示位置 */
+    font-size: 40%;
+    border: solid 1px #fff;
+}
+.fa-group {
+    width: 100%;
+    height: 100%;
+}
+.fa-group::before {
+    line-height: 50px;                  /* 親要素の高さが変わるとレイアウトが崩れるので注意 */
+}
+.fa-group-list {
+    width: 100%;
+    height: 100%;
+}
+.fa-group-list::before {
+    line-height: 90px;                  /* 親要素の高さが変わるとレイアウトが崩れるので注意 */
+}
+.fa-play {
+    font-size: 2rem;
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-play:hover {
+    font-size: 2.1rem;
+}
+.fa-play-balloon {
+    width:50px;                          /* 吹き出し全体の幅 */
+}
+.fa-pause {
+    font-size: 2rem;
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-pause-balloon {
+    width:50px;                          /* 吹き出し全体の幅 */
+}
+.fa-backward-step {
+    font-size: 1.5rem;
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-backward-step-balloon {
+    width:35px;                          /* 吹き出し全体の幅 */
+    left : 25%;                           /* 表示位置 */
+    bottom : 80%;                        /* 表示位置 */
+    margin-bottom : 10px;                 /* 表示位置 */
+}
+.fa-forward-step {
+    font-size: 1.5rem;
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-forward-step-balloon {
+    width:35px;                          /* 吹き出し全体の幅 */
+    left : 25%;                           /* 表示位置 */
+    bottom : 80%;                        /* 表示位置 */
+    margin-bottom : 10px;                 /* 表示位置 */
+}
+.fa-volume-xmark {
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-volume-xmark-balloon {
+    width:35px;                          /* 吹き出し全体の幅 */
+    left : 20%;                           /* 表示位置 */
+    bottom : 70%;                        /* 表示位置 */
+    margin-bottom : 15px;                 /* 表示位置 */
+}
+.fa-rotate-left {
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-rotate-left-balloon {
+    width:45px;                          /* 吹き出し全体の幅 */
+    left : 15%;                           /* 表示位置 */
+    bottom : 70%;                        /* 表示位置 */
+    margin-bottom : 15px;                 /* 表示位置 */
+}
+.fa-list {
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-list-balloon {
+    width:60px;                          /* 吹き出し全体の幅 */
+    left : 5%;                           /* 表示位置 */
+    bottom : 65%;                        /* 表示位置 */
+    margin-bottom : 13px;                 /* 表示位置 */
+}
+.fa-gear {
+    color: #FDFDFD;
+}
+.fa-gear-balloon {
+    width:40px;                          /* 吹き出し全体の幅 */
+    left : 20%;                           /* 表示位置 */
+    bottom : 65%;                        /* 表示位置 */
+    margin-bottom : 13px;                 /* 表示位置 */
+}
+/* ここまでツールチップ付きのフォントオーサム */
+#seekbar {
+    display: inline-block;
+    width: 60%;
+    height: 4px;
+    margin: 1em;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(#fff, #4bde08) no-repeat #eee;
+}
+.audio-information {
+    width: 20%;
+    padding: 1% 0;
+    font-size: 1rem;
+}
+.audio-information p {
+    font-size: 0.75em;
+    margin-top: 5px;
+}
+.audio-area {
+    width: 60%;
+}
+.audio-volume {
+    width: 20%;
+    display: flex;
+    font-size: 1.5rem;
+    position: relative;
+}
+.audio-list {
+    width: 30%;
+    position: relative;
+}
+.volume {
+    width: 40%;
+    padding: 5% 0;
+}
+.volume button {
+    color: #FDFDFD;
+}
+.fa-volume-fast {
+    width: 100%;
+}
+.volume-second {
+    width: 25%;
+}
+.volume-three {
+    width: 25%;
+}
+.volume-second:hover {
+    color: #079c04;
+}
+.volume-three:hover {
+    color: #079c04;
+}
+.fa-plus {
+    font-size: 70%;
+}
+.fa-minus {
+    font-size: 70%;
+}
+/* -----------------設定ボタン--------------- */
+.rotate {
+    transform:rotate(-45deg);
+}
+.setting {
+    display: none;
+    position: absolute;
+    width: 70%;
+    height: 30px;
+    line-height: 30px;
+    padding: 2px 4px;
+    font-size: 0.6em;
+    color: #FDFDFD;
+    background-color: #5d5e60f2;
+    bottom: 100px;
+    left: -50px;
+    text-align: justify;
+    border-radius: 5px;
+}
+.playback-speed-wrapper {
+    display: flex;
+    cursor: pointer;
+}
+.speed-choice {
+    display: none;
+    position: absolute;
+    width: 125px;
+    height: 185px;
+    line-height: 30px;
+    padding: 2px 0;
+    font-size: 0.6em;
+    color: #FDFDFD;
+    background-color: #5d5e60f2;
+    bottom: 100px;
+    left: -30px;
+    text-align: justify;
+    border-radius: 5px;
+}
+.choice {
+    cursor: pointer;
+    padding: 0 7px;
+    display: flex;
+}
+.choice:hover {
+    background-color: #5d5e608d;
+    color: #000;
+}
+.choice-back {
+    display: flex;
+}
+.setting:hover {
+    background-color: #5d5e60c8;
+    color: #000;
+}
+.playback-left {
+    width: 60%;
+}
+.playback-center {
+    width: 30%;
+    text-align: right;
+    padding-right: 3%;
+}
+.playback-right {
+    width: 10%;
+}
+.check {
+    content: '';
+    width: 9px;
+    height: 6px;
+    border-left: 2px solid #25AF01;
+    border-bottom: 2px solid #25AF01;
+    transform: rotate(-45deg);
+}
+.ready {
+    color: rgba(0, 0, 0, 0);
+    width: 15%;
+    margin-top: 10px;
+    margin-right: 7px;
+}
+
+.setting-speed-display {
+    display: none;
+    position: absolute;
+    width: 150px;
+    height: 25px;
+    font-size: 1rem;
+    top: -40px;
+    left: -50px;
+    background-color: #5d5e60f2;
+    border-radius: 5px;
+}
+.choice-back {
+    border-bottom: solid #ffffff80 1px;
+    cursor: pointer;
+}
+/* ここまでaudio-controls */
+/*-----------------------------------------
+ここまでplayページ
+-----------------------------------------*/
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width:768px) {
+body {
+    font-size: 0.65rem;
+}
+header {
+    font-size: 0.65rem;
+}
+footer {
+    padding: 4%;
+}
+#menu .fast {
+    width: 20%;
+}
+#menu .link {
+    height: 30px;
+    text-align: right;
+    align-items: flex-end;
+}
+#menu .link a {
+    width: 125px;
+}
+#news .ingredient-list dt {
+    width: 25%;
+}
+#news .ingredient-list dd {
+    width: 75%;
+}
+.grid {
+    margin: 15% 10% 0% 10%;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 25px;
+    grid-auto-rows: 25px;
+}
+/* オーディオプレイヤー */
+.article-area {
+    font-size: 0.75rem;
+    line-height: 25px;
+}
+#control {
+    height: 90px;
+    margin-top: 15px;
+}
+#control-wrapper {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 1%;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 50px;
+}
+.audio-information {
+    width: 25%;
+    padding: 3% 3%;
+    font-size: 1rem;
+}
+.audio-information p {
+    font-size: 0.5em;
+}
+.audio-area {
+    width: 50%;
+}
+.audio-volume {
+    width: 25%;
+    padding: 2%;
+}
+.volume {
+    display: none;
+}
+.fa-list {
+    font-size: 2rem;
+}
+.audio-setting {
+    width: 35%;
+}
+.audio-list {
+    width: 65%;
+}
+#stop {
+    display: none;
+}
+#mute {
+    display: none;
+}
+#seekbar {
+    width: 70%;
+}
+#time {
+    /* height: 35px;
+    margin-top: 10px; */
+    display: none;
+}
+.fa-group-list::before {
+    line-height: 60px;
+}
+.setting {
+    width: 150px;
+    font-size: 0.5em;
+}
+.setting-speed-display {
+    width: 125px;
+    
+}
+.rotate {
+    transform:rotate(0deg);
+}
+/* ここまでオーディオプレイヤー */
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px) {
+footer {
+    padding: 4%;
+}
+#menu .fast {
+    width: 20%;
+}
+.audio-information {
+    padding: 2% 1%;
+    font-size: 1rem;
+}
+}

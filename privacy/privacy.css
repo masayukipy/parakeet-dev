@@ -1,0 +1,25 @@
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4%;
+    text-align: left;
+}
+.privacy-title {
+    height: 100px;
+}
+.privacy-date {
+    height: 75px;
+}
+.top-name {
+    height: 50px;
+}
+.privacy-contents {
+    margin: 50px 0;
+}
+h4 {
+    height: 40px;
+    border-left: 2px solid #2294D6;
+    line-height: 40px;
+    padding-left: 20px;
+    margin: 75px 0 30px 0;
+}

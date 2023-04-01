@@ -1,0 +1,262 @@
+/* ------------------------------------------------------------
+トップページとリストページと検索ページとallページのみ適応してるCSS
+------------------------------------------------------------- */
+
+main {
+    margin: 0 auto;
+    padding: 2%;
+}
+.main-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/*-------------------------------------------------------------
+メインの一番上の情報エリア
+-------------------------------------------------------------*/
+
+.main-information-area {
+    font-size: 1.5rem;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+}
+.total-songs {
+    font-size: 1rem;
+}
+.title-time {
+    font-size: 0.9rem;
+}
+/* ----------------------------------ここまでメインの一番上の情報エリア--------------------------- */
+
+.main-contents-wrapper {
+    display: flex;
+    margin: 15px 0;
+}
+
+/* -------------------------------------------------------------
+勉強区分
+------------------------------------------------------------- */
+
+.contents-side-area {
+    width: 30%;
+    text-align: left;
+}
+.contents-side-wrapper {
+    background-color: #fff;
+    border-radius: 5px;
+}
+.contents-title {
+    height: 65px;
+    display: flex;
+    align-items: center;
+}
+.contents-title-wrapper {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-top: solid 1px rgba(201, 201, 201, 0.879);
+    border-bottom: solid 1px rgba(201, 201, 201, 0.879);
+}
+.contents-title-wrapper:hover {
+    cursor: pointer;
+}
+
+.contents-section-wrapper {
+    padding: 10px;
+    font-size: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.contents-section-wrapper:hover {
+    cursor: pointer;
+}
+.back-color:hover {
+    background-color: rgb(206, 209, 206);
+}
+.category-name {
+    width: 20%;
+}
+.category-number {
+    width: 80%;
+}
+/* ----------------------------------ここまで勉強区分------------------------------------------- */
+.contents-main-area {
+    width: 70%;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+/* -------------------------------------------------------------
+再生フレーム
+------------------------------------------------------------- */
+.play-information {
+    display: flex;
+    height: 200px;
+}
+.play-information-wrapper {
+    width: 60%;
+    height: 150px;
+    margin: auto;
+}
+.play-information-flem { /*ここから使いまわしのパーツ*/
+    width: 100%;
+    height: 150px;
+    background-color: #ebebeb;
+    border-radius: 5px;
+}
+.play-information-flem-wrapper {
+    height: 150px;
+    padding: 5%;
+}
+.play-information-flem-control {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flem-control-button {
+    width: 40%;
+    height: 35px;
+    line-height: 35px;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.5rem;
+}
+.flem-control-button a {
+    display: block;
+}
+.shuffle-button {
+    padding: 0 2px;
+}
+.order-button {
+    padding: 0 2px;
+}
+/* ----------------------------------ここまで再生フレーム------------------------------------------- */
+/* -------------------------------------------------------------
+再生リスト
+------------------------------------------------------------- */
+.play-list-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.play-multiple  {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 7% 78% 15%;
+    grid-template-rows: 50px;
+    grid-auto-rows: 50px;
+    border-bottom: solid 1px rgba(201, 201, 201, 0.6);
+}
+.play-multiple,.play-single {
+    font-size: 0.9rem;
+    padding-left: 5px;
+}
+.play-multiple,.play-single span {
+    font-size: 0.9rem;
+}
+.play-multiple:hover,.play-single:hover {
+    background-color: rgb(209, 206, 206);
+}
+.play-multiple:hover .play-action {
+    opacity: 1;
+}
+.play-single:hover .play-action {
+    opacity: 1;
+}
+.article-title {
+    text-align: left;
+}
+.article-title-time span {
+    font-size: 0.7rem;
+}
+.play-action {
+    opacity: 0;
+    text-align: center;
+}
+.play-single {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 7% 78% 15%;
+    grid-template-rows: 50px;
+    grid-auto-rows: 50px;
+    border-bottom: solid 1px rgba(201, 201, 201, 0.6);
+}
+.play-single a {
+    display: block;
+}
+.list-title-button {
+    font-size: 0.7rem;
+    margin: auto;
+}
+.play-action .fa-circle-play {
+    font-size: 1rem;
+}
+.next-all-page {
+    text-align: right;
+    height: 50px;
+    line-height: 50px;
+}
+/* ----------------------------------ここまで再生リスト------------------------------------------- */
+/* -------------------------------------------------------------
+カテゴリグループ
+------------------------------------------------------------- */
+.play-category-number,.play-category-number-is {
+    text-align: left;
+}
+.play-category-list {
+    margin: 10px 0 100px 0;
+}
+.category-group {
+    display: none;
+}
+.is-active {
+    display: block;
+}
+.active-button-list {
+    background-color: rgba(223, 255, 215, 0.4);
+}
+/* ----------------------------------ここまでカテゴリグループ------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------
+allページ
+----------------------------------------------------------------------------------*/
+
+.allPage-time {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-left: 10px;
+}
+
+/* ----------------------------------ここまでallページ------------------------------------------- */
+
+
+@media screen and (max-width:768px) {
+    nav {
+        padding: 0 4%;
+    }
+    main {
+        padding: 4%;
+    }
+    .main-contents-wrapper {
+        flex-direction: column;
+    }
+    .contents-side-area {
+        width: 100%;
+    }
+    .contents-main-area {
+        width: 100%;
+        border-radius: 5px;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .play-information-flem-wrapper-head {
+        font-size: 1rem;
+    }
+    .allPage-time {
+        font-size: 0.5rem;
+    }
+}

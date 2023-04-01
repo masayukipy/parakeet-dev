@@ -1,0 +1,73 @@
+/* --------------------------------------------
+playページのみに適応してるCSS
+----------------------------------------------*/
+
+body {
+    overflow: hidden;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+main {
+    overflow-y: scroll;
+    position: relative;
+    flex: 1;
+}
+.play-area {
+    margin: 4%;
+}
+.play-article {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 3%;
+}
+.play-article a {
+    text-decoration: underline;
+}
+.article-area {
+    font-size: 1.25rem;
+    line-height: 50px;
+}
+.quotation {
+    margin-top: 75px;
+    text-align: right;
+}
+
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width:768px) {
+
+    .audio-information {
+        overflow: hidden;
+    }
+    .text-slider {  /*プレイヤーの記事タイトルをスライドさせる為のクラス*/
+        display: inline-block;
+        padding-left: 100%;
+        white-space: nowrap;
+        animation: animate-banner 15s linear infinite;
+    }
+    .audio-information-title > * {
+        display: inline-block;
+    }
+    .article-area {
+        font-size: 0.75rem;
+        line-height: 25px;
+    }
+    _:lang(x)+_:-webkit-full-screen-document, .container { /*iPhoneのsafariのみ適応させるコード*/
+        height:100vh;
+        height: -webkit-fill-available;                    /*iPhoneのsafari固有のfooter固定の高さ調整*/
+    }
+}
+@keyframes animate-banner {     /*.text-sliderのanimationプロパティと連動*/
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

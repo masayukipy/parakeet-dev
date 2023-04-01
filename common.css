@@ -1,0 +1,521 @@
+/* --------------------------------------------
+全ページ共通のCSS
+----------------------------------------------*/
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+body {
+    background-color: #94949431;
+    font-family: 'メイリオ', 'Meiryo','MS 明朝', 'MS Mincho','Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','MS Ｐ明朝','MS PMincho',sans-serif;
+    text-align: center;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    color: green;
+}
+/* ---------------------------------------------------
+スクロール関連
+-----------------------------------------------------*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #e3e3e3;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(115, 113, 113, 0.372);
+}
+/* 次に再生エリア */
+.scroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 100vh;
+}
+.scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(115, 113, 113, 0);
+}
+.scroll::-webkit-scrollbar-track {
+    display: none;
+}
+.scroll:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(115, 113, 113, 0.372);
+}
+/* ---------------------------------------------------
+ここまでスクロール関連
+-----------------------------------------------------*/
+/* ------------------------------------
+header.php 
+-------------------------------------*/
+
+header {
+    width: 100%;
+    height: 150px;
+    background-color: #fff;
+    font-size: 1.25rem;
+}
+header #brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+.brand-top {
+    width: 20%;
+}
+.header-logo {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-right: 5%;
+    margin-left: 20%;
+    font-weight: 500;
+}
+.header-logo a {
+    color: #079c04;
+    font-weight: 600;
+}
+.header-sub {
+    min-width: 100px;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-left: 50px
+}
+nav {
+    border-bottom: 3px solid #0a55be;
+    width: 100%;
+}
+nav a{
+    color: #000;
+}
+#global-nav.m_fixed {
+	left: 0;
+	position: fixed;
+	top: 0;
+    background-color: white;
+    z-index: 999;
+}
+/*-----------------------------------------------
+検索
+-----------------------------------------------*/
+#search{
+    width: 60%;
+}
+.search_container{
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #999;
+    display: block;
+    padding: 0 5px 0 0;
+    border-radius: 15px;
+    height: 1.8em;
+    width: 70%;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.search_container input[type="text"]{
+    border: none;
+    height: 1.8em;
+    width: 88%;
+    font-size: 1rem;
+}
+.search-fleam-wrapper {
+    width: 93%;
+}
+#search-second {
+    display: none;
+}
+.fa-search {
+    color: #079c04;
+}
+/* -----------------------------------------
+ここまで～検索～
+------------------------------------------*/
+/*------------------------------------------
+メニューバー
+------------------------------------------*/
+.brand-right {
+    width: 20%;
+}
+.brand-right-wrapper {
+    width: 30%;
+}
+.menu-button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+.fa-bars {
+    font-size: 1.7rem;
+}
+.menu-container {
+    display: none;
+    position: absolute;
+    top:100%;
+    right: 0;
+    width: 200px;
+    background-color: #999;
+    z-index: 1000;
+}
+.menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 9px 0;
+    align-items: center;
+}
+.menu-wrapper span {
+    width: 100%;
+}
+.menu-wrapper a {
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1rem;
+}
+/*-----------------------ここまで--------------------------*/
+/*------------------------------------- 
+フォントオーサム
+--------------------------------------*/
+.fa-book-open {
+    color: #0a55be;
+    padding-right: 10px;
+}
+.fa-landmark {
+    color: #9c5304;
+    padding-right: 10px;
+}
+.fa-earth-americas {
+    color: #289c04;
+    padding-right: 10px;
+}
+.fa-flask {
+    color: #9c9704;
+    padding-right: 10px;
+}
+.fa-font {
+    color: #9c0404;
+    padding-right: 10px;
+}
+/*------------------------------------------ 
+ここまでフォントオーサム
+-------------------------------------------*/
+/*---------------------------------------------------------------
+グローバルナビゲーション
+「position: relative;」で、サブメニュー（Wide）の基準位置として設定
+topページ以外に適応
+----------------------------------------------------------------*/
+.menu {
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+}
+.menu > li {
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+    /*
+    「display: block;」でリンク範囲を親要素と同じ範囲まで広げる
+    */
+.menu > li a {
+    display: block;
+    word-break: break-all;
+}
+    /*
+    ドロップダウン用のメニュー
+    初期状態は表示しないため、「visibility: hidden;」で非表示にしておく
+    */
+.menu-second {
+    visibility: hidden;
+}
+
+    /*
+    Menu Single
+    「position: relative;」で、サブメニュー（Single）の基準位置として設定
+    */
+.menu > .single {
+    position: relative;
+    margin-bottom: -3px;
+}
+    /*
+    「position: absolute;」で、singleクラスを基準に所定の位置に配置する
+    */
+.single .menu-second {
+    width: 100%;
+    background-color: #3c3636;
+    top: 50px;
+    left: 0;
+    border-right: 1px solid #0a55bea7;
+    border-bottom: 1px solid #0a55bea7;
+    border-left: 1px solid #0a55bea7;
+}
+.single .menu-second li a:hover {
+    opacity: 0.7;
+    color: green;
+}
+.single .menu-second li {
+    border-bottom: 1px solid #0a55bea7;
+}
+    /*
+    ホバー時にサブメニュー（Single）を表示する
+    */
+.single:hover .menu-second {
+    visibility: visible;
+}
+
+#national {
+    background-color: #92b5e7
+}
+#citizen {
+    background-color: #ac9175;
+}
+#geography {
+    background-color: #b7d89d;
+}
+#science {
+    background-color: #d8d69d;
+}
+#english {
+    background-color: #d89d9d;
+}
+
+/*----------------------------------------------ここまでtopページ以外のglobal-nav-------------------------------------------*/
+/*-----------------------------------------------ここまでheader-----------------------------------------------*/
+/* -----------------------------------------
+教科リスト 
+------------------------------------------*/
+#menu .title {
+    height: 20px;
+    position: relative;
+}
+#menu .title h2 {
+    position: absolute;
+    top: 25%;
+    left: 6%;
+    border-radius: 5px;
+}
+#menu .title span {
+    border-radius: 5px;
+    background-color: rgb(183 231 200);
+    color: #000;
+    padding: 15px 30px 15px 30px;
+    border: solid 2px;
+}
+#menu .list-fleam {
+    border: 2px solid #000;
+    background-color: #fff;
+    box-shadow: 8px 9px 9px #ccc ;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 70px;
+    grid-auto-rows: 70px;
+    text-align: left;
+    margin: 75px;
+    grid-gap: 1rem;
+}
+.grid a,.grid span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#menu .count {
+    width: 3%;
+}
+
+/* -----------------------------------------
+ここまで～教科リスト ～
+------------------------------------------*/
+/* -----------------------------------------
+ニュース
+------------------------------------------*/
+#news {
+    height: 300px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 4%;
+}
+#news .heading {
+    height: 25px;
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+#news .ingredient-list {
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+    line-height: 50px;
+}
+/* -----------------------------------------
+ここまで～ニュース～
+------------------------------------------*/
+/* -----------------------------------------
+footerとcopy
+------------------------------------------*/
+footer {
+    height: 300px;
+    text-align: left;
+    background-color: #5d5e60;
+}
+footer .concept-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #fff;
+}
+footer .concept {
+    height: 180px;
+}
+footer .concept-head{
+    font-size: 1.5rem;
+    padding: 15px 0;
+    font-weight: bold;
+}
+footer .concept p {
+    line-height: 25px;
+}
+footer .sns {
+    height: 50px;
+    margin-bottom: 1rem;
+}
+.fa-twitter {
+    color: #fff;
+}
+.fa-twitter:hover {
+    color: #079c04;
+}
+.contact a {
+    color: #fff;
+    text-decoration: underline;
+}
+.contact a:hover {
+    color: #079c04;
+}
+.copy {
+    height: 60px;
+    background-color: #fff;
+}
+.copy-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 60px;
+}
+/* -----------------------------------------
+ここまで～footerとcopy～
+------------------------------------------*/
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width:768px) {
+body {
+    font-size: 0.65rem;
+}
+header {
+    font-size: 0.75rem;
+    height: 200px;
+}
+header h1 {
+    font-size: 2.7rem;
+}
+.header-logo {
+    margin-right: 0;
+    margin-left: 10%;
+}
+header #brand {
+    height: 100px;
+}
+.header-sub {
+    min-width: 100px;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-left: 15px;
+}
+/*----------------------------------------------
+検索
+---------------------------------------------*/
+#search{
+    display: none;
+}
+#search-second {
+    display: block;
+    height: 50px;
+}
+.search-container-second{
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #999;
+    display: block;
+    border-radius: 10px;
+    height: 3em;
+    width: 85%;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.search-fleam-wrapper-second {
+    width: 90%;
+    height: 2.2em;
+    font-size: 1rem;
+}
+.search-container-second input[type="submit"]{
+    display: block;
+    cursor: pointer;
+    font-family: FontAwesome;
+    font-size: 1.5em;
+    border: none;
+    background: none;
+    color: #079c04;
+    position: absolute;
+    width: 2.4em;
+    height: 4em;
+    right: 0;
+    top: -20px;
+    outline : none;
+}
+.fa-search {
+    font-size: 1.2rem;
+}
+/* -------------------ここまで検索---------------- */
+footer {
+    padding: 0 4% 0 4%;
+}
+.grid {
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 25px;
+    grid-auto-rows: 25px;
+    margin: 50px 30px 50px 30px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px) {
+footer {
+    padding: 0 4% 0 4%;
+}
+}
+
+@media screen and (max-width:375px) {
+    .fa-group {
+        font-size: 0;
+        width: 0;
+    }
+}

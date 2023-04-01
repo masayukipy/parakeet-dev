@@ -1,0 +1,526 @@
+/* --------------------------------------------------------------------------
+オーディオプレイヤーのみのCSS
+--------------------------------------------------------------------------- */
+.audio-controls{
+    width: 100%;
+    height: 90px;
+    padding: 0 1%;
+    color: #fff;
+    /* position: fixed;コンテンツが下に潜り込まないようにHTMLに右記を直接入力。padding-bottom: 90px;box-sizing: border-box;
+    bottom: 0; */
+    z-index: 1001;
+    background-color: #484a47;
+    display: flex;
+}
+#control {
+    height: 60%;
+}
+#control-wrapper {
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 1%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 50px;
+    grid-auto-rows: 50px;
+}
+#time {
+    height: 40%;
+    color: #ccc;
+}
+#forward {
+    margin-right: 0 30px;
+}
+/*--------------------------------------------------------------------------
+ツールチップ付きのフォントオーサム
+---------------------------------------------------------------------------*/
+.balloon {
+    position   : absolute;                /* 親要素を基準 */
+    display: none;                        /* 要素を非表示 */
+    padding: 2px;                         /* テキストの前後の余白 */
+    background-color: #484A47;         /* 背景色（透明度） */
+    width: 75px;                          /* 吹き出し全体の幅 */
+    left : 8%;                           /* 表示位置 */
+    bottom : 100%;                        /* 表示位置 */
+    margin-bottom : 5px;                 /* 表示位置 */
+    font-size: 40%;
+    border: solid 1px #fff;
+}
+.fa-group {
+    /* width: 100%; */
+    height: 100%;
+}
+.fa-group::before {
+    line-height: 50px;                  /* 親要素の高さが変わるとレイアウトが崩れるので注意 */
+}
+.fa-group-list {
+    width: 100%;
+    height: 100%;
+}
+.fa-group-list::before {
+    line-height: 90px;                  /* 親要素の高さが変わるとレイアウトが崩れるので注意 */
+}
+.fa-play {
+    font-size: 2rem;
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-play:hover {
+    font-size: 2.1rem;
+}
+.fa-play-balloon {
+    width:50px;                          /* 吹き出し全体の幅 */
+}
+.fa-pause {
+    font-size: 2rem;
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-pause-balloon {
+    width:50px;                          /* 吹き出し全体の幅 */
+}
+.fa-backward-step {
+    font-size: 1.5rem;
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-backward-step-balloon {
+    width:35px;                          /* 吹き出し全体の幅 */
+    left : 25%;                           /* 表示位置 */
+    bottom : 80%;                        /* 表示位置 */
+    margin-bottom : 10px;                 /* 表示位置 */
+}
+.fa-forward-step {
+    font-size: 1.5rem;
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-forward-step-balloon {
+    width:35px;                          /* 吹き出し全体の幅 */
+    left : 25%;                           /* 表示位置 */
+    bottom : 80%;                        /* 表示位置 */
+    margin-bottom : 10px;                 /* 表示位置 */
+}
+.fa-volume-xmark {
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-volume-xmark-balloon {
+    width:35px;                          /* 吹き出し全体の幅 */
+    left : 20%;                           /* 表示位置 */
+    bottom : 70%;                        /* 表示位置 */
+    margin-bottom : 15px;                 /* 表示位置 */
+}
+.fa-rotate-left {
+    color: #FDFDFD;
+    position: relative;
+}
+.fa-rotate-left-balloon {
+    width:45px;                          /* 吹き出し全体の幅 */
+    left : 15%;                           /* 表示位置 */
+    bottom : 70%;                        /* 表示位置 */
+    margin-bottom : 15px;                 /* 表示位置 */
+}
+.fa-list {
+    color: #ccc;
+    position: relative;
+}
+.fa-list-balloon {
+    width:60px;                          /* 吹き出し全体の幅 */
+    left : 5%;                           /* 表示位置 */
+    bottom : 65%;                        /* 表示位置 */
+    margin-bottom : 13px;                 /* 表示位置 */
+}
+.fa-gear {
+    color: #ccc;
+}
+.fa-gear-balloon {
+    width:40px;                          /* 吹き出し全体の幅 */
+    left : 20%;                           /* 表示位置 */
+    bottom : 65%;                        /* 表示位置 */
+    margin-bottom : 13px;                 /* 表示位置 */
+}
+.fa-volume-low {
+    color: #ccc;
+}
+/* -------------ここまでツールチップ付きのフォントオーサム-----------------------*/
+
+/* ------------------------------------------------------------------------
+シークバー
+--------------------------------------------------------------------------*/
+#seekbar {
+    display: inline-block;
+    width: 60%;
+    height: 5px;
+    margin: 1em;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(#fff, #07bd04) no-repeat #eee;
+}
+.audio-information {
+    width: 20%;
+    padding: 1% 0;
+    font-size: 1rem;
+}
+.audio-information p {
+    font-size: 0.75em;
+    margin-top: 5px;
+}
+.audio-area {
+    width: 60%;
+}
+.audio-volume {
+    width: 20%;
+    display: flex;
+    font-size: 1.5rem;
+    position: relative;
+}
+.audio-list {
+    width: 30%;
+    position: relative;
+}
+.volume {
+    width: 40%;
+    padding: 5% 0;
+}
+.volume button {
+    color: #ccc;
+}
+.fa-volume-fast {
+    width: 100%;
+}
+.volume-second {
+    width: 25%;
+}
+.volume-three {
+    width: 25%;
+}
+.volume-second:hover {
+    color: #079c04;
+}
+.volume-three:hover {
+    color: #079c04;
+}
+.fa-plus {
+    font-size: 70%;
+}
+.fa-minus {
+    font-size: 70%;
+}
+/* ------------------------ここまでシークバー------------------------*/
+/* ------------------------------------------------------------------
+設定ボタン
+------------------------------------------------------------------- */
+.rotate {
+    transform:rotate(-45deg);
+}
+.setting {
+    display: none;
+    position: absolute;
+    width: 70%;
+    height: 30px;
+    line-height: 30px;
+    padding: 2px 4px;
+    font-size: 0.6em;
+    color: #FDFDFD;
+    background-color: #5d5e60f2;
+    bottom: 100px;
+    left: -50px;
+    text-align: justify;
+    border-radius: 5px;
+}
+.playback-speed-wrapper {
+    display: flex;
+    cursor: pointer;
+}
+.speed-choice {
+    display: none;
+    position: absolute;
+    width: 125px;
+    height: 185px;
+    line-height: 30px;
+    padding: 2px 0;
+    font-size: 0.6em;
+    color: #FDFDFD;
+    background-color: #5d5e60f2;
+    bottom: 100px;
+    left: -30px;
+    text-align: justify;
+    border-radius: 5px;
+}
+.choice {
+    cursor: pointer;
+    padding: 0 7px;
+    display: flex;
+}
+.choice:hover {
+    background-color: #5d5e608d;
+    color: #000;
+}
+.choice-back {
+    display: flex;
+}
+.setting:hover {
+    background-color: #5d5e60c8;
+    color: #000;
+}
+.playback-left {
+    width: 60%;
+}
+.playback-center {
+    width: 30%;
+    text-align: right;
+    padding-right: 3%;
+}
+.playback-right {
+    width: 10%;
+}
+.check {
+    content: '';
+    width: 9px;
+    height: 6px;
+    border-left: 2px solid #25AF01;
+    border-bottom: 2px solid #25AF01;
+    transform: rotate(-45deg);
+}
+.ready {
+    color: rgba(0, 0, 0, 0);
+    width: 15%;
+    margin-top: 10px;
+    margin-right: 7px;
+}
+
+.setting-speed-display {
+    display: none;
+    position: absolute;
+    width: 125px;
+    height: 25px;
+    font-size: 1rem;
+    top: -40px;
+    left: -25px;
+    background-color: #5d5e60f2;
+    border-radius: 5px;
+}
+.choice-back {
+    border-bottom: solid #ffffff80 1px;
+    cursor: pointer;
+}
+/* ---------------------ここまで設定ボタン-----------------------------------*/
+/*---------------------------------------------------------
+次へボタンを押したときに対応するクラス。article.jsと連動
+---------------------------------------------------------*/
+.contents-active {
+    display: none;
+}
+.contents-active:first-of-type {
+    display: block;
+}
+.audio-active {
+    display: none;
+}
+.audio-active:first-of-type {
+    display: block;
+}
+.is-active {
+    display: block;
+}
+.now-volume {
+    width: 10%;
+    opacity: 0;
+}
+/*---------------------------ここまで--------------------------*/
+/* -------------------------------------------------------------------------
+次に再生
+-------------------------------------------------------------------------- */
+.next-play-area {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    -webkit-overflow-scrolling: touch;
+    top: 0;
+    z-index: 1000;
+    background-color: #030303;
+    color: #FDFDFD;
+}
+.next-play-area a {
+    color: #FDFDFD;
+}
+.next-play-article {
+    max-height: calc(100vh - 190px);          /*スクロールバーを表示させるために必要なコード,190pxは上の100pxと下の90pxを足した高さ、そこから画面の高さを引いている*/
+}
+.next-play-main {
+    max-width: 90%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    padding: 0 50px 15px 50px;
+}
+.now-play {
+    width: 50%;
+}
+.next-play {
+    width: 50%;
+}
+.next-play-list {
+    max-height: calc(100vh - 190px);              /*スクロールバーを表示させるために必要なコード,190pxは上の100pxと下の90pxを足した高さ、そこから画面の高さを引いている*/
+}
+.space {
+    padding: 0 3% 3% 3%;
+}
+.now-play-title-left {
+    height: 100px;
+    line-height: 100px;
+    font-size: 2rem;
+    color: #484A47;
+}
+.now-play-title {
+    height: 100px;
+    line-height: 100px;
+    font-size: 2rem;
+    color: #484A47;
+}
+.play-title-back-color {               /*現在再生中のタイトルの背景*/
+    background-color: #cacaca36;
+}
+.play-title {
+    height: 50px;
+    width: 70%;
+    margin: 0 auto;
+    line-height: 50px;
+    display: flex;
+}
+.play-title-center {
+    width: 70%;
+    text-align: left;
+}
+.play-title-right {
+    width: 20%;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+/* ------------------ここまで次に再生---------------------------------------------- */
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width:768px) {
+
+    .article-area {
+        font-size: 0.75rem;
+        line-height: 25px;
+    }
+
+    /* オーディオプレイヤー */
+    .audio-controls{
+        height: 70px;
+    }
+    #control {
+        margin-bottom: 10px;
+    }
+    #control-wrapper {
+        width: 75%;
+        margin: 0 auto;
+        padding-top: 1%;
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        grid-template-rows: 50px;
+    }
+    .audio-information {
+        width: 25%;
+        padding: 2% 0;
+        font-size: 1rem;
+    }
+    .audio-information p {
+        font-size: 0.5em;
+    }
+    .audio-area {
+        width: 50%;
+    }
+    .audio-volume {
+        width: 25%;
+        padding: 1%;
+    }
+    .volume {
+        display: none;
+    }
+    .fa-list {
+        font-size: 2rem;
+    }
+    .audio-setting {
+        width: 35%;
+    }
+    .audio-list {
+        width: 65%;
+    }
+    #stop {
+        display: none;
+    }
+    #mute {
+        display: none;
+    }
+    #seekbar {
+        display: none;
+    }
+    #current {
+        margin-right: 15px;
+    }
+    #current::after {
+        display: inline-block;
+        content: '';
+        width: 1px;
+        height: 7px;
+        background-color: rgb(208, 208, 208);
+        transform: rotate(35deg);
+        margin-left: 20px;
+    }
+    .fa-group-list::before {
+        line-height: 60px;
+    }
+    .setting {
+        width: 150px;
+        font-size: 0.5em;
+    }
+    .setting-speed-display {
+        width: 125px;
+        
+    }
+    .rotate {
+        transform:rotate(0deg);
+    }
+/*-------------------------------------------------------
+次に再生
+--------------------------------------------------------*/
+    .next-play-article {
+        max-height: calc(100vh - 170px);              /*スクロールバーを表示させるために必要なコード,170pxは上の100pxと下の70pxを足した高さ、そこから画面の高さを引いている*/
+    }
+    .next-play-list {
+        max-height: calc(100vh - 170px);              /*スクロールバーを表示させるために必要なコード,170pxは上の100pxと下の90pxを足した高さ、そこから画面の高さを引いている*/
+    }
+    .next-play-main {
+        padding: 0 0 15px 0;
+    }
+    .play-title {
+        width: 80%;
+    }
+    .now-play {
+        width: 0%;
+    }
+    .next-play {
+        width: 100%;
+    }
+    .now-play-title-left {
+        display: none;
+    }
+    .next-play-article {
+        display: none;
+    }
+/*----------------ここまで次に再生-------------------------*/
+    /* ここまでオーディオプレイヤー */
+}
+    
+@media screen and (min-width:768px) and ( max-width:1024px) {
+    .audio-information {
+        padding: 2% 1%;
+        font-size: 1rem;
+    }
+}
+/* -----------------ここまでオーディオプレイヤー---------------------------- */

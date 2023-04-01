@@ -1,0 +1,152 @@
+/* トップページにのみ適応 */
+/*-------------------------------------------------- 
+header
+----------------------------------------------------*/
+/*---------------------------------------------------------
+nav
+----------------------------------------------------------*/
+.top-page-navigation {
+    border-bottom: none;
+    background-color: #e7f1ff;
+    height: 50px;
+}
+.top-page-navigation-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 50px;
+    grid-auto-rows: 50px;
+    height: 50px;
+    line-height: 50px;
+    max-width: 800px;
+}
+.nav-home {
+    border-bottom: solid 2px #0481A2;
+}
+.top-page-navigation-container button {
+    position: relative;
+}
+.active-button::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    /*線の形状*/
+    width: 120%;
+    height: 2px;
+    background:#0481A2;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(1, 1);/*X方向0、Y方向1*/
+    transform-origin: left top;/*左上基点*/
+}
+/* ------------------------------ここまでnav---------------------------------- */
+/* -----------------------ここまでheader------------------------- */
+/*---------------------------------------------------
+topページmainエリア
+----------------------------------------------------*/
+main {
+    padding: 0;
+}
+#main-subject {
+    height: 750px;
+}
+.subject-wrapper {
+    max-width: 750px;
+    margin: 40px auto 100px auto;
+}
+/* .junior-high-school {
+    width: 50%;
+}
+.junior-high-school-wrapper {
+    height: 100%;
+    padding: 2% 5% 2% 2%;
+}
+.junior-title {
+    height: 60px;
+    font-size: 1.4rem;
+} */
+.high-school {
+    width: 400px;
+    margin: 0 auto;
+}
+.high-school-wrapper {
+    padding: 2%;
+}
+.high-school-title {
+    height: 60px;
+    font-size: 1.4rem;
+}
+.subject-contents, .junior-subject-contents{
+    display: none; /*最初は非表示 is-contents-activeのクラスが付いた時に表示*/
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 8px 9px 9px #ccc;
+    padding-bottom: 25px;
+}
+.is-contents-active {
+    display: block;
+}
+.subject-contents div {
+    height: 50px;
+}
+.subject-contents div:hover {
+    background-color: rgb(209, 206, 206);
+}
+.subject-contents h2:hover {
+    background-color: rgb(209, 206, 206);
+}
+.subject-contents a,.junior-subject-contents a {
+    display: block;
+    padding: 0 15px;
+    line-height: 50px;
+    border-radius: 5px;
+}
+.curriculum-submit {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: normal;
+}
+.curriculum-submit a {
+    display: block;
+}
+.curriculum-submit span {
+    margin: 0 auto;
+}
+/* -------------------------------------------ここまでtopページmainエリア-----------------------------------------------*/
+@media screen and (max-width:768px) {
+
+    .top-page-navigation-container {
+        padding: 0 4%;
+    }
+
+    #main-subject {
+        height: auto;
+    }
+
+    .subject-wrapper {
+        flex-direction: column;
+    }
+    .high-school {
+        min-width: 300px;
+    }
+    .subject-contents,.junior-subject-contents {
+        font-size: 1.1rem;
+    }
+    #news .heading {
+        padding: 0 4%;
+    }
+    #news .ingredient-list {
+        padding: 0 4%;
+    }
+    .copy-wrapper p {
+        padding: 0 4%;
+    }
+}
+@media screen and (max-width:415px) {
+    .high-school {
+        width: 100%;
+    }
+}
